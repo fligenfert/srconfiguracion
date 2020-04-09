@@ -4,7 +4,7 @@
 
 # Puerto por defecto de Eureka
 server:
-  port: 5555
+  port: 8761
   servlet:
    context-path: ${config.server.context-paths.sto-eureka}
   
