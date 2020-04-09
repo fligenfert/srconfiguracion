@@ -1,0 +1,35 @@
+################################################################################################################################
+# Entorno para desarrollo
+################################################################################################################################
+spring:
+ profiles: DES
+ datasource:
+  sqlScriptEncoding: UTF-8
+ 
+config:
+ eureka:
+  endpoint:
+   gateway: GATEWAY
+   backautenticacion: BACK-AUTENTICACION
+   backadministracion: BACK-ADMINISTRACION
+   backconfiguracion: BACK-CONFIGURACION
+ endpoint:
+  backautenticacion: http://172.18.3.124:8001
+ server:
+  context-paths:
+   sto-gateway: /gateway
+   sto-eureka: /eureka
+   sto-back-configuracion: /back-configuracion
+   sto-back-autenticacion: /back-autenticacion
+   sto-back-administracion: /back-administracion
+  
+server:
+ error:
+  include-stacktrace: never
+  
+eureka:
+ instance:
+  initialStatus: UNKNOWN
+ client:
+  healthcheck:
+   enabled: true
