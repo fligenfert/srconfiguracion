@@ -14,7 +14,7 @@ spring:
  security:
    user:
      name: adminEureka
-     password: '{cipher}343ac7b6a7a14214df13a36f7f173e0821845b64e876185ee602fc86729c3cdb'
+     password: '{cipher}954cc28655bd7efcb495ce77ea22d4f3c8b6e933565337ce41b3916a2135fc39'
 
 # Configuración de Eureka  
 eureka:
