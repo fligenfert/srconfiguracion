@@ -1,0 +1,69 @@
+################################################################################################################################
+# Entorno para desarrollo
+################################################################################################################################
+server:
+ port: 8888
+ 
+logging:
+ file: D:/desarrollo/logs/configuracion-server.log
+
+spring:
+ profiles: DES
+ application:
+  name: SR-SERVER-CONFIGURACION
+ #jpa:
+  #show-sql: true
+ #datasource:
+  #url: jdbc:oracle:thin:@172.18.1.33:1521:cartuja4
+  #username: sto
+  #password: sto
+  #driver-class-name: oracle.jdbc.OracleDriver
+  #sqlScriptEncoding: UTF-8
+ security:
+  user:
+   name: adminConfig
+   password: '{cipher}5a8139e0e2589ab8f2006aeeec9c2552bed7d9a340ea79a9f94dd4e99fad747c'
+   
+# Configuración general
+config:
+ general:
+  state: UP
+    
+# Configuración eureka
+eureka:
+ instance:
+#  preferIpAddress: true
+  hostname: localhost
+  port: 8761
+  user:
+      name: adminEureka
+      password: '{cipher}b7bba42abdc3d7c12046b9a4f87ab3eeff8d711127edebabd800cc54171f614d'
+  metadata-map:
+#   user: adminConfig
+#   password: '{cipher}5a8139e0e2589ab8f2006aeeec9c2552bed7d9a340ea79a9f94dd4e99fad747c'
+   appOwner: SR
+   description: Back de configuracion
+  virtual-host-name: SR-SERVER-CONFIGURACION
+ client:
+   serviceUrl:
+      defaultZone: http://${eureka.instance.user.name}:${eureka.instance.user.password}@${eureka.instance.hostname}:${eureka.instance.port}/eureka/
+   healthcheck:
+      enabled: true
+      
+# Configuraciones de seguridad
+security:
+ oauth2:
+  resource:
+   userInfoUri: ${config.endpoint.backautenticacion}/auth/user/me
+   preferTokenInfo: false
+   jwt:
+    key-value: '{cipher}63c159452c1099e88f1f681da4e1ac5352bb3cfc43225f3d73bb629c5166b4f6'
+
+# Propiedades para actuator info
+info:
+  app:
+    name: SR-SERVER-CONFIGURACION
+    description: Back de configuracion
+    version: 0.0.1-SNAPSHOT
+  java-vendor: ${java.specification.vendor}
+  java-version: ${java.vm.name}
