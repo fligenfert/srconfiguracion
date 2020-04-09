@@ -1,0 +1,38 @@
+################################################################################################################################
+# Entorno de desarrollo
+################################################################################################################################
+
+# Puerto por defecto de Eureka
+server:
+  port: 8761
+  servlet:
+   context-path: ${config.server.context-paths.sto-eureka}
+  
+# Credenciales de seguridad 
+spring:
+ profiles: DES
+ security:
+   user:
+     name: adminEureka
+     password: '{cipher}b7bba42abdc3d7c12046b9a4f87ab3eeff8d711127edebabd800cc54171f614d'
+
+# Configuración de Eureka  
+eureka:
+  instance:
+#    hostname: localhost
+    preferIpAddress: true
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+      
+# Configuración de logging        
+logging:
+  file: /usr/local/nuevaarquitecturasto/logs/eureka.log
+  level:
+    org:
+      springframework:
+        security: ERROR
+    com:
+      netflix:
+        eureka: OFF
+        discovery: OFF
