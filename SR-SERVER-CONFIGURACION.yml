@@ -46,7 +46,7 @@ eureka:
   virtual-host-name: SR-SERVER-CONFIGURACION
  client:
    serviceUrl:
-      defaultZone: http://${eureka.instance.user.name}:${eureka.instance.user.password}@${eureka.instance.hostname}:${eureka.instance.port}/eureka/
+      defaultZone: http://${eureka.instance.user.name}:${eureka.instance.user.password}@${eureka.instance.hostname}:${eureka.instance.port}${config.server.context-paths.sto-eureka}/eureka/
    healthcheck:
       enabled: true
       
