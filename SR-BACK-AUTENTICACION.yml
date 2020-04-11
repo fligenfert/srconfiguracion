@@ -12,11 +12,13 @@ logging:
 spring:
  profiles: DES
  datasource:
-  url: jdbc:oracle:thin:@172.18.1.33:1521:cartuja4
+  url: jdbc:mysql://localhost/db_nueva_app_sr
   username: root
   password:
-  driver-class-name: oracle.jdbc.OracleDriver
+  driver-class-name: com.mysql.cj.jdbc.Driver
   sqlScriptEncoding: UTF-8
+ jpa:
+  database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
  application:
   name: SR-BACK-AUTENTICACION
   
