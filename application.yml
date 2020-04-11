@@ -10,9 +10,9 @@ config:
  eureka:
   endpoint:
    gateway: GATEWAY
-   backautenticacion: BACK-AUTENTICACION
-   backadministracion: BACK-ADMINISTRACION
-   backconfiguracion: BACK-CONFIGURACION
+   backautenticacion: SR-BACK-AUTENTICACION
+   backadministracion: SR-BACK-ADMINISTRACION
+   backconfiguracion: SR-BACK-CONFIGURACION
  endpoint:
   backautenticacion: http://172.18.3.124:8001
  server:
