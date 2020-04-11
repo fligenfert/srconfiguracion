@@ -17,11 +17,11 @@ config:
   backautenticacion: http://172.18.3.124:8001
  server:
   context-paths:
-   sto-gateway: /gateway
-   sto-eureka: /eureka
-   sto-back-configuracion: /back-configuracion
-   sto-back-autenticacion: /back-autenticacion
-   sto-back-administracion: /back-administracion
+   sr-gateway: /gateway
+   sr-eureka: /eureka
+   sr-back-configuracion: /back-configuracion
+   sr-back-autenticacion: /back-autenticacion
+   sr-back-administracion: /back-administracion
   
 server:
  error:
