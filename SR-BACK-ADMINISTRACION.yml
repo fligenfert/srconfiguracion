@@ -1,0 +1,40 @@
+################################################################################################################################
+# Entorno del servidor de Desarrollo
+################################################################################################################################
+server:
+ port: 8002
+ servlet:
+  context-path: ${config.server.context-paths.sr-back-administracion}
+ 
+logging:
+ file: /usr/local/nuevaarquitecturasto/logs/administracion-back.log
+ 
+spring:
+ profiles: DES
+ datasource:
+  url: jdbc:oracle:thin:@172.18.1.33:1521:cartuja4
+  jdbcUrl: jdbc:oracle:thin:@172.18.1.33:1521:cartuja4
+  username: sto
+  password: sto
+  driver-class-name: oracle.jdbc.OracleDriver
+  sqlScriptEncoding: UTF-8
+ application:
+  name: SR-BACK-ADMINISTRACION
+  
+eureka:
+ instance:    
+  preferIpAddress: true
+  virtualHostName: SR-BACK-ADMINISTRACION
+  metadataMap:
+   configPath: ${config.server.context-paths.sr-back-administracion}
+   appOwner: SR
+   description: API de administración del SR
+
+# Configuraciones de seguridad
+security:
+ oauth2:
+  resource:
+   userInfoUri: ${config.endpoint.backautenticacion}${config.server.context-paths.sr-back-autenticacion}/user/me
+   preferTokenInfo: false
+   jwt:
+    key-value: '{cipher}63c159452c1099e88f1f681da4e1ac5352bb3cfc43225f3d73bb629c5166b4f6'
