@@ -1,0 +1,35 @@
+################################################################################################################################
+# Entorno del servidor de DESARROLLO
+################################################################################################################################
+server:
+ port: 8001
+ servlet:
+  context-path: ${config.server.context-paths.sr-back-autenticacion}
+  
+logging:
+ file: /usr/local/nuevaarquitecturasto/logs/autenticacion-back.log
+  
+spring:
+ profiles: DES
+ datasource:
+  url: jdbc:oracle:thin:@172.18.1.33:1521:cartuja4
+  username: root
+  password:
+  driver-class-name: oracle.jdbc.OracleDriver
+  sqlScriptEncoding: UTF-8
+ application:
+  name: SR-BACK-AUTENTICACION
+  
+jwt:
+ autenticacion:
+  token:
+   signing-key: '{cipher}63c159452c1099e88f1f681da4e1ac5352bb3cfc43225f3d73bb629c5166b4f6'
+    
+eureka:
+ instance:
+  preferIpAddress: true
+  virtualHostName: SR-BACK-AUTENTICACION
+  metadataMap:
+   configPath: ${config.server.context-paths.sr-back-autenticacion}
+   appOwner: STO
+   description: API de autenticación de SR
