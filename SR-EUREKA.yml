@@ -6,7 +6,7 @@
 server:
   port: 8761
   servlet:
-   context-path: ${config.server.context-paths.sto-eureka}
+   context-path: ${config.server.context-paths.sr-eureka}
   
 # Credenciales de seguridad 
 spring:
